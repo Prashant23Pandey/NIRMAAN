@@ -1,0 +1,21 @@
+<?php
+require_once __DIR__ . '/config/database.php';
+$db = getDbConnection();
+$cols = $db->query("SHOW COLUMNS FROM work_passports")->fetchAll(PDO::FETCH_COLUMN);
+echo "work_passports columns: " . implode(', ', $cols) . "\n";
+$wscols = $db->query("SHOW COLUMNS FROM worker_skills")->fetchAll(PDO::FETCH_COLUMN);
+echo "worker_skills columns: " . implode(', ', $wscols) . "\n";
+$jobcols = $db->query("SHOW COLUMNS FROM jobs")->fetchAll(PDO::FETCH_COLUMN);
+echo "jobs columns: " . implode(', ', $jobcols) . "\n";
+$jmcols = $db->query("SHOW COLUMNS FROM job_matches")->fetchAll(PDO::FETCH_COLUMN);
+echo "job_matches columns: " . implode(', ', $jmcols) . "\n";
+$jacols = $db->query("SHOW COLUMNS FROM job_applications")->fetchAll(PDO::FETCH_COLUMN);
+echo "job_applications columns: " . implode(', ', $jacols) . "\n";
+$projcols = $db->query("SHOW COLUMNS FROM projects")->fetchAll(PDO::FETCH_COLUMN);
+echo "projects columns: " . implode(', ', $projcols) . "\n";
+$pwcols = $db->query("SHOW COLUMNS FROM project_workers")->fetchAll(PDO::FETCH_COLUMN);
+echo "project_workers columns: " . implode(', ', $pwcols) . "\n";
+$notifcols = $db->query("SHOW COLUMNS FROM notifications")->fetchAll(PDO::FETCH_COLUMN);
+echo "notifications columns: " . implode(', ', $notifcols) . "\n";
+$hpcols = $db->query("SHOW COLUMNS FROM homeowner_profiles")->fetchAll(PDO::FETCH_COLUMN);
+echo "homeowner_profiles columns: " . implode(', ', $hpcols) . "\n";

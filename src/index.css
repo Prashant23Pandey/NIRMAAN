@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #176B5B;
+  --secondary: #F4B942;
+  --bg-sand: #F7F5EF;
+  --text-charcoal: #17211F;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F7F5EF;
+  color: #17211F;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100vh;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EDE4;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BEAD;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #176B5B;
+}
+
+/* Custom Animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s infinite ease-in-out;
+}
+
+/* Passport Card Hologram / Border Glow */
+.passport-border {
+  border: 2px solid rgba(23, 107, 91, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #faf8f2 100%);
+  position: relative;
+}
+
+.passport-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #176B5B, #F4B942, #176B5B);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Badge styles */
+.badge-verified {
+  background: linear-gradient(135deg, #176B5B 0%, #10463C 100%);
+  color: #FFFFFF;
+}
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
